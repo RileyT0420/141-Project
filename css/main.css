@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css?family=Mukta:700');
+
+/* Carousel */
+.carousel-inner {
+  height: 500px;
+  padding-bottom: 30%; /* sets carousel aspect ratio (4:1) */
+}
+
+.carousel-item {
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.carousel-item img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
+}
+
+.section-spacing {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+/* Navbar Linkhover */
+li a:hover {
+  background-color: #bd6262;
+  color: rgb(183, 51, 51);
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+/* Curricular + Extracurricular Hover */
+.card-img-top {
+  height: 300px;
+  overflow: hidden;
+  position: relative; /* Ensure the mask and title are positioned relative to this element */
+}
+
+.card-img-top img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: filter 0.5s ease-in-out; /* Smooth transition for image effects */
+}
+
+.mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  visibility: hidden; /* Initially hidden */
+  opacity: 0; /* Start with 0 opacity */
+  transition: opacity 0.5s ease-in-out, visibility 0.5s; /* Smooth visibility and opacity transition */
+  display: flex; /* Use flexbox to center content */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+    transition: opacity 0.5s ease-in-out, visibility 0.5s;
+
+}
+
+.bg-image {
+  position: relative; /* Ensure the mask is positioned relative to this element */
+}
+
+.bg-image:hover .mask {
+  visibility: visible; /* Show the mask */
+  opacity: 1; /* Fade the mask in smoothly */
+}
+
+.bg-image:hover img {
+  filter: brightness(0.5) blur(2px); /* Darken and blur image on hover */
+}
+
+/* Text Overlay Styling */
+.bg-image h2 {
+  visibility: hidden; /* Initially hidden */
+  color: #fff; /* Bright white text */
+  font-size: 2rem; /* Large text size */
+  font-weight: 900; /* Extra bold */
+  line-height: 1.2; /* Adjust line spacing for two lines */
+  text-align: center; /* Center text alignment */
+  transition: visibility 0.5s, color 0.5s ease-in-out; /* Smooth appearance */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Add shadow for more contrast */
+  white-space: pre-line; /* Preserve line breaks for two-line text */
+}
+
+.bg-image:hover h2 {
+  visibility: visible; /* Reveal the text on hover */
+}
+
+/* Curricular Bands */
+.curricular:hover h2 {
+  color: #4f9adf;
+}
+
+/* Extracurricular Bands */
+.extracurricular:hover h2 {
+  color: #DF7A12;
+}
+
+/* Buttons and Animations */
+
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
+  box-sizing: border-box;
+}
+
+button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #A4C8E1;
+  border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #222529;
+  border-right: 0.125rem solid #222529;
+  transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #FEFEFC;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+button:hover .circle {
+  width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+  background: #222529;
+  transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+  color: #222529;
+}
+
+/* Raider Logo Dim */
+#raiderLogo {
+  transition: filter 0.2s ease-in-out; /* Smooth transition in and out */
+  filter: brightness(1) blur(0px); /* Default state */
+}
+
+#raiderLogo[data-dimmed="true"] {
+  filter: brightness(0.2) blur(5px); /* Dimmed state */
+}
+
+
+/* Positioning and Overlays */
+.position-relative {
+  position: relative;
+}
+
+.bg-raider-mission {
+  position: relative;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  z-index: 1;
+  width: 100%;
+  padding: 10px;
+}
+
+/* Generic Rules */
+img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.blur {
+  filter: brightness(0.2) blur(5px);
+}
+
+.round {
+  border-radius: 15px;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+
+.card_h {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card_h:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card_h-footer {
+  background-color: #f8f9fa;
+  text-align: center;
+  font-weight: bold;
+}
+
+footer {
+  width: 100%; /* Ensures the footer takes the full width */
+  background-color: #333; /* Ensure it has a consistent background color */
+  color: white;
+  padding: 20px 0; /* Add some vertical padding for spacing */
+  border-top: 2px solid var(--primary-color); /* Optional border for a neat touch */
+  position: relative;
+  bottom: 0;
+}
+
+.footer-container {
+  max-width: 1200px; /* Optional: Center the content with a max-width */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+.footer-bottom {
+  background-color: #444; /* Darker background for the copyright bar */
+  padding: 10px;
+  text-align: center;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}

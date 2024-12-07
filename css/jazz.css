@@ -1,0 +1,301 @@
+/* Optional: Adjust the background and overlay if needed */
+.bg-raider-mission {
+    position: relative;
+}
+
+.background-image {
+    width: 100%;
+    height: 300px;
+    filter: brightness(0.3) blur(4px);
+    object-fit: cover; /* Ensures the image covers the entire container without stretching */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center text vertically */
+    align-items: center; /* Center text horizontally */
+    color: white; /* Make text white */
+    text-align: center;
+    z-index: 10; /* Ensure it overlays above the image */
+}
+
+.jazz-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+.jazz-description {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    padding: 0 15%;
+}
+
+/* Hide the images by default */
+.btn .img-fluid {
+    display: none;
+}
+
+/* Show the image when hovering over the button */
+.btn-august:hover .img-august,
+.btn-september:hover .img-september,
+.btn-october:hover .img-october .img-november,
+.img-december .img-january .img-february .img-march,
+.img-april .img-may .img-june {
+    display: block;
+}
+
+/* Optionally, style the images */
+.btn img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    transition: opacity 0.3s ease; /* Optional fade-in effect */
+}
+
+/* Hide the image for months that are not hovered */
+.btn img {
+    opacity: 0;
+}
+
+/* Show image with opacity when hovered */
+.btn:hover img {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .custom-btn {
+        font-size: 24px;
+        height: 150px;
+    }
+    .jazz-title {
+        font-size: 2rem;
+    }
+    .jazz-description {
+        padding: 0 10%;
+    }
+}
+
+
+.custom-btn {
+    border: 3px solid black !important;
+    border-radius: 5% !important;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+/* Updated Month Text Style */
+button span {
+    color: black; /* Set text color to black */
+    font-size: 36px; /* Keeps the font size consistent */
+    text-shadow: none; /* Removes the outline effect */
+}
+
+.card_h-footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  footer {
+    width: 100%; /* Ensures the footer takes the full width */
+    background-color: #333; /* Ensure it has a consistent background color */
+    color: white;
+    padding: 20px 0; /* Add some vertical padding for spacing */
+    border-top: 2px solid var(--primary-color); /* Optional border for a neat touch */
+    position: relative;
+    bottom: 0;
+  }
+  
+  .footer-container {
+    max-width: 1200px; /* Optional: Center the content with a max-width */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  .footer-bottom {
+    background-color: #444; /* Darker background for the copyright bar */
+    padding: 10px;
+    text-align: center;
+  }
+
+/* Ensure the parent container is relative */
+.button-container {
+    position: relative; /* Ensures absolute positioning of the image under the button */
+    display: inline-block; /* Keep the button and image together */
+    margin-bottom: 20px; /* Space between buttons in rows */
+}
+
+/* Style for the month buttons */
+.button-container .btn {
+    position: relative; /* Ensures the button sits above the image */
+    z-index: 1; /* Higher z-index to overlay above the image */
+    background-color: white; /* Default button background */
+    border: 3px solid #333;
+    border-radius: 5%;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Button background color change */
+}
+
+/* Style for the images under the buttons */
+.button-container img {
+    position: absolute; /* Positioned relative to the button container */
+    top: 100%; /* Places image directly below the button */
+    left: 50%; /* Centers the image horizontally */
+    transform: translateX(-50%); /* Corrects centering */
+    z-index: 0; /* Keeps image below the button */
+    width: 150px; /* Adjust image size */
+    height: auto; /* Maintain aspect ratio */
+    opacity: 0; /* Initially hide the image */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth reveal effect */
+}
+
+/* Hover effect to reveal the image */
+.button-container:hover img {
+    opacity: 1; /* Show the image */
+    transform: translateX(-50%) translateY(-10px); /* Slight upward movement */
+}
+
+.button-container:hover .btn {
+    background-color: #333; /* Darken button background */
+    color: white; /* Change text color */
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .button-container img {
+        width: 80%; /* Smaller image for smaller screens */
+    }
+    .btn {
+        font-size: 18px; /* Smaller button text */
+        padding: 10px 20px;
+    }
+}
+
+/* Ensure the col div is a relative container */
+.position-relative {
+    position: relative;
+}
+
+/* Style for the images under the buttons */
+.hover-image {
+    position: absolute; /* Positioned relative to the col container */
+    top: 0; /* Align to the top of the container */
+    left: 0; /* Align to the left of the container */
+    width: 100%; /* Cover the entire width of the button */
+    height: 100%; /* Match the height of the button */
+    object-fit: cover; /* Ensure image scales without distortion */
+    z-index: 0; /* Place image behind the button */
+    opacity: 0; /* Hide the image initially */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth fade-in and zoom effect */
+}
+
+/* Style for the buttons */
+.custom-btn {
+    position: relative; /* Ensure buttons sit above images */
+    z-index: 1; /* Higher z-index to overlay buttons above images */
+    background-color: white; /* Default button background */
+    border: 3px solid #333;
+    border-radius: 5%;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons to reveal images */
+.position-relative:hover .hover-image {
+    opacity: 1; /* Make the image visible */
+    transform: scale(1.1); /* Slight zoom effect */
+}
+
+.position-relative:hover .custom-btn {
+    background-color: #333; /* Darken button on hover */
+    color: white; /* Change button text color */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .custom-btn {
+        font-size: 18px; /* Adjust button font size */
+        padding: 10px 20px;
+    }
+    .hover-image {
+        object-fit: contain; /* Adjust fit for smaller screens */
+    }
+}
+
+/* Side images */
+.side-image {
+    position: absolute;
+    top: 50%; /* Center the images vertically */
+    transform: translateY(-50%); /* Adjust for perfect centering */
+    z-index: 1; /* Ensure the images appear beneath other content */
+    width: 30vw; /* Make the width relative to the viewport width */
+    height: auto; /* Maintain aspect ratio */
+
+}
+
+/* Position Jazz Sax on the left with padding */
+.side-image.left {
+    left: 5%; /* Position it 5% from the left edge */
+    padding-right: 10%; /* Adds padding between the left image and the months container */
+}
+
+/* Position Jazz Trumpet on the right with padding */
+.side-image.right {
+    right: 5%; /* Position it 5% from the right edge */
+    padding-left: 10%; /* Adds padding between the right image and the months container */
+}
+
+/* Adjust the months container for padding */
+.months-container {
+    margin-left: 15%; /* Adds space between the left image and the months container */
+    margin-right: 15%; /* Adds space between the right image and the months container */
+}
+
+/* Adjust the page container to avoid overlap with footer */
+.page-container {
+    position: relative; /* Ensure absolute positioning works inside the container */
+    padding-bottom: 100px; /* Adjust to make room for images */
+}
+
+footer {
+    width: 100%; /* Ensures the footer takes the full width */
+    background-color: #333; /* Ensure it has a consistent background color */
+    color: white;
+    padding: 20px 0; /* Add some vertical padding for spacing */
+    border-top: 2px solid var(--primary-color); /* Optional border for a neat touch */
+    position: relative;
+    bottom: 0;
+  }
+  
+  .footer-container {
+    max-width: 1200px; /* Optional: Center the content with a max-width */
+    margin: 0 auto; /* Center the container horizontally */
+  }
+  
+  .footer-bottom {
+    background-color: #444; /* Darker background for the copyright bar */
+    padding: 10px;
+    text-align: center;
+  }
