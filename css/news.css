@@ -7,7 +7,7 @@
     border: 1px solid black;
 }
 .grid-container{
-    border: 1px solid black;
+    border: 2px dashed black;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
     padding: 10px;
@@ -18,17 +18,17 @@
     padding-left: 5px;
 }
 .accordion{
-    margin-top: 1rem;
     margin-left: 8rem;
     margin-right: 8rem;
     margin-bottom: 2rem;
 }
 .craft{
     border: 1px solid black;
-    margin: 3rem;
+    margin: 2rem;
+    padding: 1rem;
 }
 .margin{
-    margin: 3rem;
+    margin: 2rem;
 }
 .militia{
     padding: 3rem;
@@ -88,4 +88,7 @@ footer {
     border: 1px solid rgba(0, 0, 0, 0.8);
     padding: 1rem;
     margin: .5rem;
+}
+.card{
+    padding: 1rem;
 }

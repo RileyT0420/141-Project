@@ -357,4 +357,8 @@ html, body {
   margin-top: 5px;
   border-radius: 5px;
 }/*# sourceMappingURL=style.css.map */
-
+.border{
+  border: #000 solid 1px;
+  margin: 1rem;
+  padding: 2rem;
+}
