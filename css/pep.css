@@ -52,84 +52,87 @@
     display: block;
 }
 
-/* Optionally, style the images */
-.btn img {
-    width: 50px; /* Adjust size as needed */
-    height: auto;
-    transition: opacity 0.3s ease; /* Optional fade-in effect */
-}
-
-/* Hide the image for months that are not hovered */
-.btn img {
-    opacity: 0;
-}
-
-/* Show image with opacity when hovered */
-.btn:hover img {
-    opacity: 1;
-}
-
-@media (max-width: 768px) {
-    .custom-btn {
-        font-size: 24px;
-        height: 150px;
-    }
-    .jazz-title {
-        font-size: 2rem;
-    }
-    .jazz-description {
-        padding: 0 10%;
-    }
-}
-
-
-.custom-btn {
-    border: 3px solid black !important;
-    border-radius: 5% !important;
-    transition: background-color 0.3s ease-in-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 200px;
-    font-size: 36px;
-    font-weight: bold;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-/* Updated Month Text Style */
-button span {
-    color: black; /* Set text color to black */
-    font-size: 36px; /* Keeps the font size consistent */
-    text-shadow: none; /* Removes the outline effect */
-}
-
-.card_h-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  footer {
-    width: 100%; /* Ensures the footer takes the full width */
-    background-color: #333; /* Ensure it has a consistent background color */
-    color: white;
-    padding: 20px 0; /* Add some vertical padding for spacing */
-    border-top: 2px solid var(--primary-color); /* Optional border for a neat touch */
+/* Image Containers */
+.image-container {
     position: relative;
-    bottom: 0;
-  }
-  
-  .footer-container {
-    max-width: 1200px; /* Optional: Center the content with a max-width */
-    margin: 0 auto; /* Center the container horizontally */
-  }
-  
-  .footer-bottom {
-    background-color: #444; /* Darker background for the copyright bar */
-    padding: 10px;
-    text-align: center;
-  }
+    width: 100%;
+    padding-top: 100%; /* Keeps the aspect ratio */
+    overflow: hidden;
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Shadow for better visibility */
+}
+
+/* Images should cover the container */
+.image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image scales properly */
+    border-radius: 8px;
+}
+
+.image-container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 1.5vw 3vw; /* Smaller padding */
+    font-size: 2.5vw; /* Smaller font size */
+    border: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects for the buttons */
+.image-container .btn:hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.row.g-4 {
+    display: flex; /* Flexbox layout */
+    flex-wrap: wrap; /* Allow wrapping to the next row */
+    gap: 1.5rem; /* Space between items */
+    justify-content: center; /* Center align items horizontally */
+}
+
+/* General Button Styles */
+.button-container .btn {
+    position: relative; /* Allows layering of text over the image */
+    width: 200px; /* Button size, adjust as needed */
+    height: 200px;
+    background-size: cover; /* Ensures the image covers the button */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents image tiling */
+    border: 3px solid #333; /* Button border */
+    border-radius: 5%; /* Rounded corners */
+    color: black; /* Text color */
+    font-size: 24px; /* Text size */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Capitalize text */
+    display: flex; /* Flexbox for centering text */
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .image-container .btn {
+        font-size: 4vw; /* Slightly larger for smaller screens */
+        padding: 3vw 6vw; /* Adjust padding for small screens */
+    }
+    .side-image-container img {
+        max-width: 80%;
+    }
+}
 
 /* Ensure the parent container is relative */
 .button-container {
@@ -244,47 +247,75 @@ button span {
     }
 }
 
-/* Side images */
+/* Style for side images */
 .side-image {
-    position: absolute;
-    top: 50%; /* Center the images vertically */
-    transform: translateY(-50%); /* Adjust for perfect centering */
-    z-index: 1; /* Ensure the images appear beneath other content */
-    width: 20vw; /* Make the width relative to the viewport width */
+    width: 100%; /* Scale image to fill the container width */
     height: auto; /* Maintain aspect ratio */
-
+    border-radius: 8px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image scales properly */
+    border: 3px solid #333; /* Add a border around the images */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow for depth */
 }
 
-/* Position Jazz Sax on the left with padding */
-.side-image.left {
-    left: 5%; /* Position it 5% from the left edge */
-    padding-right: 10%; /* Adds padding between the left image and the months container */
+/* Add a border to the left side image */
+.side-image-container.left {
+    padding: 10px; /* Optional: Add space between border and image */
+    border-radius: 8px; /* Optional: Round the corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for effect */
 }
 
-/* Position Jazz Trumpet on the right with padding */
-.side-image.right {
-    right: 5%; /* Position it 5% from the right edge */
-    padding-left: 10%; /* Adds padding between the right image and the months container */
+/* Add a border to the right side image */
+.side-image-container.right {
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Adjust the months container for padding */
-.months-container {
-    margin-left: 15%; /* Adds space between the left image and the months container */
-    margin-right: 15%; /* Adds space between the right image and the months container */
+/* Side Image Containers */
+.side-image-container {
+    flex: 0 0 20%; /* 20% of the page width for side images */
+    max-width: 300px; /* Maximum width of side images */
+    display: flex; /* Use flexbox to center the image */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: relative; /* To position the button on top of the image */
 }
 
-/* Adjust the page container to avoid overlap with footer */
+/* Central Content (Month Buttons) */
+.month-container {
+    flex: 1; /* Take up remaining space in the center */
+    text-align: center; /* Center align content */
+    padding: 20px; /* Optional: Add padding around the month buttons */
+}
+
+/* Layout for the page container */
 .page-container {
-    position: relative; /* Ensure absolute positioning works inside the container */
-    padding-bottom: 100px; /* Adjust to make room for images */
+    display: flex; /* Use flexbox to align side images and central content */
+    flex-wrap: nowrap; /* Ensure side images stay on the sides */
+    justify-content: space-between; /* Space between left, center, and right sections */
+    align-items: center; /* Vertically align the elements */
+    gap: 20px; /* Add space between sections */
+    padding: 20px; /* Optional: Add padding around the entire container */
 }
 
-.card_h-footer {
-    background-color: #f8f9fa;
-    text-align: center;
-    font-weight: bold;
-  }
-  
+/* Responsive Behavior */
+@media (max-width: 768px) {
+    .side-image-container {
+        flex: 0 0 25%; /* Larger images on smaller screens */
+        max-width: 250px; /* Adjust max-width on small screens */
+    }
+
+    .month-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    /* Ensure buttons scale appropriately */
+    .image-container .btn {
+        font-size: 5vw; /* Button size relative to viewport width */
+        padding: 3vw 5vw; /* Adjust padding for smaller screen */
+    }
+}
+
 footer {
     width: 100%; /* Ensures the footer takes the full width */
     background-color: #333; /* Ensure it has a consistent background color */
