@@ -33,7 +33,7 @@
 }
 
 .jazz-description {
-    font-size: 1.5rem;
+    font-size: 1 rem;
     line-height: 1.8;
     padding: 0 15%;
 }
@@ -134,39 +134,46 @@
     }
 }
 
-/* Ensure the parent container is relative */
+/* General Button Container Style */
 .button-container {
-    position: relative; /* Ensures absolute positioning of the image under the button */
-    display: inline-block; /* Keep the button and image together */
-    margin-bottom: 20px; /* Space between buttons in rows */
+    position: relative;
+    display: inline-block;
+    margin: 10px; /* Reduced margin for tighter spacing */
+    width: 150px; /* Scaled-down button width */
+    height: 150px; /* Scaled-down button height */
+    overflow: hidden;
+    border-radius: 5%;
 }
 
-/* Style for the month buttons */
+
+/* Button (Text) Style */
 .button-container .btn {
-    position: relative; /* Ensures the button sits above the image */
-    z-index: 1; /* Higher z-index to overlay above the image */
-    background-color: white; /* Default button background */
-    border: 3px solid #333;
-    border-radius: 5%;
-    font-size: 24px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1rem; /* Adjusted text size for smaller buttons */
     font-weight: bold;
     text-transform: uppercase;
-    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out; /* Button background color change */
+    transition: background-color 0.3s ease;
 }
 
-/* Style for the images under the buttons */
+/* Background Image Style */
 .button-container img {
-    position: absolute; /* Positioned relative to the button container */
-    top: 100%; /* Places image directly below the button */
-    left: 50%; /* Centers the image horizontally */
-    transform: translateX(-50%); /* Corrects centering */
-    z-index: 0; /* Keeps image below the button */
-    width: 150px; /* Adjust image size */
-    height: auto; /* Maintain aspect ratio */
-    opacity: 0; /* Initially hide the image */
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth reveal effect */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Hover effect to reveal the image */
@@ -217,7 +224,7 @@
     background-color: white; /* Default button background */
     border: 3px solid #333;
     border-radius: 5%;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-transform: uppercase;
     padding: 15px 30px;
