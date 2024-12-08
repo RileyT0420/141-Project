@@ -25,3 +25,15 @@ footer {
     padding: 10px;
     text-align: center;
   }
+  .bord{
+    border: 1px solid black;
+    margin: 1rem;
+    padding: 1rem; 
+  }
+  .word{
+    margin: 1rem;
+    padding: 1rem;
+  }
+.vine{
+  padding-bottom: 1rem;
+}
