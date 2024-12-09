@@ -3,7 +3,7 @@
 /* Carousel */
 .carousel-inner {
   height: 500px;
-  padding-bottom: 30%; /* sets carousel aspect ratio (4:1) */
+  padding-bottom: 30%; 
 }
 
 .carousel-item {
@@ -50,14 +50,14 @@ ul {
 .card-img-top {
   height: 300px;
   overflow: hidden;
-  position: relative; /* Ensure the mask and title are positioned relative to this element */
+  position: relative; 
 }
 
 .card-img-top img {
   object-fit: cover;
   height: 100%;
   width: 100%;
-  transition: filter 0.5s ease-in-out; /* Smooth transition for image effects */
+  transition: filter 0.5s ease-in-out; 
 }
 
 .mask {
@@ -66,45 +66,45 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
-  visibility: hidden; /* Initially hidden */
-  opacity: 0; /* Start with 0 opacity */
-  transition: opacity 0.5s ease-in-out, visibility 0.5s; /* Smooth visibility and opacity transition */
-  display: flex; /* Use flexbox to center content */
-  justify-content: center; /* Center horizontally */
-  align-items: center; /* Center vertically */
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0; 
+  transition: opacity 0.5s ease-in-out, visibility 0.5s;
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
     transition: opacity 0.5s ease-in-out, visibility 0.5s;
 
 }
 
 .bg-image {
-  position: relative; /* Ensure the mask is positioned relative to this element */
+  position: relative; 
 }
 
 .bg-image:hover .mask {
-  visibility: visible; /* Show the mask */
-  opacity: 1; /* Fade the mask in smoothly */
+  visibility: visible; 
+  opacity: 1; 
 }
 
 .bg-image:hover img {
-  filter: brightness(0.5) blur(2px); /* Darken and blur image on hover */
+  filter: brightness(0.5) blur(2px); 
 }
 
 /* Text Overlay Styling */
 .bg-image h2 {
-  visibility: hidden; /* Initially hidden */
-  color: #fff; /* Bright white text */
-  font-size: 2rem; /* Large text size */
-  font-weight: 900; /* Extra bold */
-  line-height: 1.2; /* Adjust line spacing for two lines */
-  text-align: center; /* Center text alignment */
-  transition: visibility 0.5s, color 0.5s ease-in-out; /* Smooth appearance */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8); /* Add shadow for more contrast */
-  white-space: pre-line; /* Preserve line breaks for two-line text */
+  visibility: hidden; 
+  color: #fff; 
+  font-size: 2rem; 
+  font-weight: 900; 
+  line-height: 1.2; 
+  text-align: center; 
+  transition: visibility 0.5s, color 0.5s ease-in-out; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+  white-space: pre-line;
 }
 
 .bg-image:hover h2 {
-  visibility: visible; /* Reveal the text on hover */
+  visibility: visible; 
 }
 
 /* Curricular Bands */
@@ -216,12 +216,12 @@ button:hover .button-text {
 
 /* Raider Logo Dim */
 #raiderLogo {
-  transition: filter 0.2s ease-in-out; /* Smooth transition in and out */
-  filter: brightness(1) blur(0px); /* Default state */
+  transition: filter 0.2s ease-in-out; 
+  filter: brightness(1) blur(0px); 
 }
 
 #raiderLogo[data-dimmed="true"] {
-  filter: brightness(0.2) blur(5px); /* Dimmed state */
+  filter: brightness(0.2) blur(5px); 
 }
 
 
@@ -279,10 +279,6 @@ img {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.card-img-top {
-  height: 200px;
-  object-fit: cover;
-}
 
 .card_h-footer {
   background-color: #f8f9fa;
@@ -291,74 +287,22 @@ img {
 }
 
 footer {
-  width: 100%; /* Ensures the footer takes the full width */
-  background-color: #333; /* Ensure it has a consistent background color */
+  width: 100%; 
+  background-color: #333; 
   color: white;
-  padding: 20px 0; /* Add some vertical padding for spacing */
-  border-top: 2px solid var(--primary-color); /* Optional border for a neat touch */
+  padding: 20px 0; 
+  border-top: 2px solid var(--primary-color); 
   position: relative;
   bottom: 0;
 }
 
 .footer-container {
-  max-width: 1200px; /* Optional: Center the content with a max-width */
-  margin: 0 auto; /* Center the container horizontally */
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 .footer-bottom {
-  background-color: #444; /* Darker background for the copyright bar */
+  background-color: #444;
   padding: 10px;
   text-align: center;
-}
-
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-}
-.calendar {
-  background-color: #A4C8E1;
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-.calendar-header {
-  background-color: #D17F32;
-  color: #FEFEFC;
-  padding: 10px;
-  text-align: center;
-  border-radius: 10px 10px 0 0;
-  transition: background-color 0.3s;
-}
-.calendar-header:hover {
-  background-color: #da995c;
-}
-.calendar-day {
-  background-color: #FEFEFC;
-  color: #404040;
-  padding: 10px;
-  border: 1px solid #222529;
-  border-radius: 5px;
-  margin: 5px;
-  text-align: center;
-  transition: transform 0.2s;
-}
-.calendar-day:hover {
-  background-color: #bd6262;
-  color: rgb(183, 51, 51);
-  transform: scale(1.05);
-}
-.calendar-event {
-  background-color: #1E4170;
-  color: #FEFEFC;
-  padding: 5px;
-  margin-top: 5px;
-  border-radius: 5px;
-}/*# sourceMappingURL=style.css.map */
-.border{
-  border: #000 solid 1px;
-  margin: 1rem;
-  padding: 2rem;
 }
